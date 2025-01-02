@@ -1,7 +1,7 @@
 import streamlit as st
 
 def main():
-    st.title("Survival Prediction Tool v1.3")
+    st.title("CRRT Survival Prediction Tool v1.3")
 
     # Define variables and their upper limits with labels
     variables = {
@@ -106,10 +106,10 @@ def main():
                                 within_limit += 1
 
         if total_variables > 0:
-            final_score = within_limit / total_variables
-            st.success(f"The final score is: {final_score:.2f}")
-            st.info(f"Total within limit: {within_limit}")
-            st.info(f"Total variables considered: {total_variables}")
+            final_score = (within_limit / total_variables) * 100
+            st.success(f"The final score is: {final_score:.2f}%")
+            # st.info(f"Total within limit: {within_limit}")
+            # st.info(f"Total variables considered: {total_variables}")
         else:
             st.warning("No variables included in the calculation.")
 
